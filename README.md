@@ -6,8 +6,11 @@ The repo is just a quick test to try out techniques for authenticating to a thir
 
 For my purposes I've found the following basic technique works:
 
-Encrypt a key for accessing the remote server and add it to the `.travis.yml`
-``` travis encrypt-file depoly_key --add ```
+Encrypt a key for accessing the remote server and add it to the `.travis.yml
+`
+``` travis encrypt-file deploy_key --add ```
+
 This will add the key decryption command to the travis script
 I've found that the file permissions aren't preserved when doing this and so to use the key I've found I have to lock down the extracted file afterwards
+
 ``` chmod 400 deploy_key ```
